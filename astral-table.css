@@ -1,0 +1,190 @@
+/* Astral Table */
+.astral-table {
+    position: relative;
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #161012, #1f0d0d);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    overflow: hidden; 
+}
+
+/* Divider */
+.astral-table .divider {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 15px;
+    border: 1px solid rgba(172, 140, 91, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Starry Background */
+.starry-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with stars */
+    overflow: hidden; /* Ensure stars stay within the table */
+}
+
+.stars-bg__star {
+    animation: blink 3s infinite;
+    fill: #d4af37; 
+}
+
+.stars-bg__blink-2 {
+    animation-delay: 1s;
+}
+
+.stars-bg__blink-3 {
+    animation-delay: 2s;
+}
+
+@keyframes blink {
+    0%   { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+/* Image Row */
+.astral-table .image-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.astral-table .image-circle {
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg); /* Rotate the container for diamond shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ac8c5b;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+    overflow: hidden; /* Prevent overflow */
+    margin: 15px;
+    position: relative;
+}
+
+.astral-table .image-circle img {
+    width: 140%; 
+    height: 140%;
+    position: absolute;
+    object-fit: cover; 
+    transform: rotate(-45deg); 
+}
+
+/* Content Container */
+.astral-table .content-container {
+    display: flex;
+}
+
+/* Tags Section */
+.astral-table .tags-section {
+    font-size: 11px;
+    font-family: "Spectral", serif;
+    color: rgba(172, 140, 91, 0.8);
+    width: 60px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(172, 140, 91, 0.2);
+    margin-right: 10px;
+    z-index: 1;
+}
+
+/* Text Content */
+.astral-table .text-content {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    flex-grow: 1;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 1.8;
+    padding: 15px;
+    border: 1px solid rgba(172, 140, 91, 0.2);
+    overflow-y: scroll;
+    height: 400px;
+    text-align: justify;
+    white-space: pre-line;
+    z-index: 1;
+}
+
+/* Scrollbar Styling for Webkit Browsers */
+.astral-table .text-content::-webkit-scrollbar {
+    width: 6px; 
+}
+
+.astral-table .text-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.astral-table .text-content::-webkit-scrollbar-thumb {
+    background: rgba(172, 140, 91, 0.2); 
+    
+}
+
+.astral-table .text-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(172, 140, 91, 0.5); 
+}
+
+/* Bold & Italic Text Glow */
+.astral-table .text-content b,
+.astral-table .text-content i {
+    font-family: "Spectral", serif;
+    color: #d4af37;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Quote Section */
+.astral-table .quote-section {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Spectral", serif;
+    color: rgba(172, 140, 91, 0.8);
+    border: 1px solid rgba(172, 140, 91, 0.2);
+    letter-spacing: 1.5px;
+    font-style: italic;
+}
+
+@media (max-width: 500px) {
+		.astral-table {
+		width: 80%;
+		padding: 10px;
+		margin: 60px auto;
+	}
+
+	.astral-table .image-circle {
+			width: 40px;
+			height: 40px;
+	}
+
+	.astral-table .text-content {
+			font-size: 10px;
+			padding: 10px;
+			height: 300px;
+	}
+
+	.astral-table .quote-section {
+			font-size: 10px;
+	}
+
+	.astral-table .divider {
+			padding: 10px;
+			margin-bottom: 20px;
+	}
+
+	.astral-table .tags-section {
+			font-size: 8px;
+			width: 40px;
+			padding: 5px;
+	}
+}
